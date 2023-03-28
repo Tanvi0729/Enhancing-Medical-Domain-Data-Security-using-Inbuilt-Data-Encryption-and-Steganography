@@ -1,0 +1,1 @@
+ID: 0, Patient Age: 69, Patient Sex: Female, Right-Diagnostic Keywords: normal fundus, Normal: 0, Diabetes: 0, Glaucoma: 0, Cataract: 1, Age related: 0, Hypertension: 0, Myopia: 0, Other: 0, Disease: Normal
