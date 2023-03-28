@@ -1,0 +1,276 @@
+<MyScreenManager>:
+    Home:
+        name: 'Home'
+    Guide:
+        name: 'Guide'
+    Stego:
+        name: 'Stego'
+    stegoOpt:
+        name: 'stegoOpt'
+    UnhideData:
+        name: 'UnhideData'
+
+<Home>
+    FloatLayout:
+    Label:
+        text: 'Image Encryption and Steganography'
+        font_name: "Verdana"
+        italic: True
+        bold : True
+        
+        pos_hint:{"y":0.4}
+        font_size: 40
+        color : ("#4b0082")
+        
+        
+        
+    Button:
+        text: 'User Guide'
+        font_name: "Gothic"
+        font_size : 25
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.20,0.1
+        pos_hint : {"x":0.75,"top":0.15}
+                    
+        on_release:
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Guide'
+
+    Button:
+        text: 'Steganography'
+        font_name: "Gothic"
+        font_size : 30
+        color : ("#FFFFFF")
+        background_color: ("#05445E")
+        size_hint : 0.36,0.1        
+        pos_hint : {"x":0.32,"top":0.50}
+        
+        on_release:
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'stegoOpt'
+
+<stegoOpt>
+    FloatLayout:
+
+    Label:
+        text: 'Image Encryption and Steganography'
+        font_name: "Verdana"
+        italic: True
+        bold : True
+        pos_hint:{"y":0.4}
+        font_size: 40
+        color : ("#4b0082")
+
+    Button:
+        text: 'Steganography'
+        font_name: "Gothic"
+        font_size : 30
+        color : ("#FFFFFF")
+        background_color: ("#05445E")
+        size_hint : 0.36,0.1
+        pos_hint : {"x":0.32,"top":0.60}
+
+        on_release:
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'Stego'
+
+    Button:
+        text: 'Retrive Data'
+        font_name: "Gothic"
+        font_size : 30
+        color : ("#FFFFFF")
+        background_color: ("#05445E")
+        size_hint : 0.36,0.1
+        pos_hint : {"x":0.32,"top":0.40}
+
+        on_release:
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'UnhideData'
+    
+    Button:
+        text: 'Back'
+        font_name: "Gothic"
+        font_size : 20
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.20,0.1
+        pos_hint : {"x":0.75,"top":0.15}
+        
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Home'
+
+
+<Guide>
+    FloatLayout:
+    Label:
+        text: 'User Guide'
+        font_name: "Verdana"
+        italic: True
+        underline : True
+        pos_hint:{"y":0.43}
+        font_size: 40
+        bold: True
+        color : ("#152238")
+             
+    Label:
+        pos_hint : {"x":0,"left":1,"top":0.94}
+        font_size: 20
+        color : ("#152238")
+        
+        text:'\u2022 This application shows Image Encryption and Steganography for the medical Images and\n  data encryption.\n\n\u2022 There is a button called Stegnography that you have to select for the Image Stegnography.\n\n\u2022 Before going for the stegnography, the data that is related to the particular image is \n  encrypt by our implemented algorithm know as AES algorithm in a background so you will  \n  recieve the encrypted data format to hide in the image.\n\n\u2022 This increses the security for the data and also user friendly to do the task.\n\n\u2022 After the selecting Stegnography, you have to upload 2 file that is Image file and Text file,\n  which is stored in the file manager.\n\n\u2022 The text file is encrypted patient data that we will hide behind the medical image.\n\n\u2022 After clicking on the submit, you will store the output image in your file system and you\n  will see the msg that our file is submiited.\n\n\u2022 Also you can send the image via mail whomever you want to send but you have to fix \n  one person to do that.\n\nThis is about the our system.\nThank you\nTanvi & Jinal\n'
+    
+    Button:
+        text: 'Back'
+        font_name: "Gothic"
+        font_size : 20
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.20,0.1
+        pos_hint : {"x":0.75,"top":0.15}
+        
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Home'
+
+
+<Stego>
+    FloatLayout:
+    
+    Label:
+        text: 'Steganography'
+        font_name: "Verdana"
+        italic: True
+        pos_hint:{"y":0.4}
+        font_size: 40
+        bold: True
+        underline: True
+        color : ("#152238")
+        
+
+    Label:
+        text: 'Select Image File:'
+        font_name: "Gothic"
+        bold : True
+        pos: "-220dp", "120dp"
+        font_size: 30
+        color : ("#152238")
+        
+
+    Button:
+		text: 'choose file'
+        font_name: "Gothic"
+        
+        background_color: ("#05445E")
+		on_press: root.select_file()
+        size_hint : 0.36,0.1
+        pos: "440dp", "430dp"
+    
+    Button:
+		text: 'choose file'
+        font_name: "Gothic"
+        background_color: ("#05445E")
+		on_press: root.select_file()
+        size_hint : 0.36,0.1
+        pos: "440dp", "250dp"
+
+    Label:
+        text: 'Select Text File:'
+        font_name: "Gothic"
+        bold : True
+        pos: "-230dp", "-60dp"
+        font_size: 30
+        color : ("#152238")
+        
+    Button:
+        text: 'Submit'    
+        font_name: "Gothic"
+        font_size : 30
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.36,0.1
+        pos_hint : {"x":0.32,"top":0.25}
+        
+        on_release:
+            root.btn()
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Home'
+
+    Button:
+        text: 'Back'
+        font_name: "Gothic"
+        font_size : 20
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.20,0.1
+        pos_hint : {"x":0.75,"top":0.15}
+        
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'stegoOpt'
+
+<UnhideData>
+    FloatLayout:
+    
+    Label:
+        text: 'Data Retrival'
+        font_name: "Verdana"
+        italic: True
+        pos_hint:{"y":0.4}
+        font_size: 40
+        bold: True
+        underline: True
+        color : ("#152238")
+        
+
+    Label:
+        text: 'Select Image File:'
+        font_name: "Gothic"
+        bold : True
+        pos: "-220dp", "120dp"
+        font_size: 30
+        color : ("#152238")
+        
+
+    Button:
+		text: 'choose file'
+        font_name: "Gothic"
+        
+        background_color: ("#05445E")
+		on_press: root.select_file()
+        size_hint : 0.36,0.1
+        pos: "440dp", "430dp"
+    
+    Button:
+        text: 'Submit'    
+        font_name: "Gothic"
+        font_size : 30
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.36,0.1
+        pos_hint : {"x":0.32,"top":0.45}
+        
+        on_release:
+            root.btn()
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Home'
+    
+    Button:
+        text: 'Back'
+        font_name: "Gothic"
+        font_size : 20
+        color : ("#FFFFFF")
+        background_color: ("#DA70D6")
+        size_hint : 0.20,0.1
+        pos_hint : {"x":0.75,"top":0.15}
+        
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'stegoOpt'
+<P>:   
+    Label:
+        text: "Submitted"
+        font_name: "Gothic"
+        size_hint: 0.6, 0.2
+        pos_hint: {"x":0.2, "top":0.6}

@@ -1,0 +1,22 @@
+This application shows Image Encryption and Steganography for the medical Images and\n data encryption.\n
+
+there is a button called Stegnography that you have to select for the \nImage Stegnography.\n
+
+Before going for the stegnography, the data that is related to the particular image is \nencrypt by our implemented
+algorithm know as AES algorithm \nin a background so you will recieve the encrypted data format to hide in the 
+image.\n
+
+this increses the security for the data and also user friendly to do the task.\n
+
+after the selecting Stegnography, you have to upload 2 file that is Image file and Text file\n which is stored 
+in the file manager.\n
+
+the text file is encrypted patient data that we will hide behind the medical image.\n
+
+after clicking on the submit you will store the output image in your file system and \nyou will see the msg that 
+our file is submiited\n
+also you can send the image via mail whomever you want to send but you have to fix one person to do that.\n
+
+this is about the our system \n
+Thank you\n
+Tanvi & Jinal\n
